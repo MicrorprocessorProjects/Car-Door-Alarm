@@ -7,7 +7,7 @@ Topic 14.1 from "Programmable Microcontrollers With Applications" by Unsalan and
 
 Title
 Author's names:
-Abstract: 1 lnie per section to follow
+Abstract: 1 line per section to follow
 Background: Bried MSP430 project
 Methods: Specifications, tools (CCS), flow (Algorithm),
 Schematic: paste from textbook
