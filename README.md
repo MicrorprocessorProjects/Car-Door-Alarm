@@ -8,7 +8,7 @@ Topic 14.1 from "Programmable Microcontrollers With Applications" by Unsalan and
 ###Title
 ####Author's names:
 ###Abstract: 1 line per section to follow
-###Background: Bried MSP430 project
+###Background: Briefly describe MSP430, how it works, its specs, how it relates to project, project itself
 ###Methods: Specifications, tools (CCS), flow (Algorithm),
 ###Schematic: paste from textbook
 ###Results: Screencaps showing that code is working, photos/video that hardware is functioning properly as per the objective.
