@@ -20,8 +20,18 @@ int main(void)
     int is_pressed = 0;
     while(1){
     	Car_Doors=P2IN & BIT_MASK_DOORS;
-		Car_Lock=P2IN & BIT_MASK_LOCK;
-	
+
+       	// doors can only lock if all doors are closed
+		if(Car_Doors == BIT_MASK_DOORS){
+			if((P2IN & BIT4) == BIT4){
+				if(!is_pressed){
+					Car_Lock ^= BIT0;
+					is_pressed = 1;
+				}
+			}else{
+				is_pressed = 0;
+			}
+		}
 
 		// if	car is locked doors all doors are closed and lock alarm is off
 		if(Car_Lock){
