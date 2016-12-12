@@ -40,15 +40,15 @@ Screenshot 1:
 
 Before code is run (Shots  1-2) look at P1OUT, P2IN, Car_Lock
 
-1. For P1OUT and P2IN, we are concerned only with bits 0-4.  When all doors are open, we look at P2IN, the register holds all 0’s because none of the buttons have been pressed (bits 0-3) therefor the car door’s variable is set to 0.  Because all of the car doors are locked, P2.5 is not set, because the car lock button is not pressed.  Because neither of these are set, the car door lock variable is also 0.  The is_pressed variable is 0 because the car lock has not been toggled.  
+For P1OUT and P2IN, we are concerned only with bits 0-4.  When all doors are open, we look at P2IN, the register holds all 0’s because none of the buttons have been pressed (bits 0-3) therefor the car door’s variable is set to 0.  Because all of the car doors are locked, P2.5 is not set, because the car lock button is not pressed.  Because neither of these are set, the car door lock variable is also 0.  The is_pressed variable is 0 because the car lock has not been toggled.  
 
 Screenshot 2:
 
-2. All car doors have been closed but the car is not yet locked.  When looking at P2IN, the first 4 bits are set.  Because all 4 car door buttons have been pressed.  Now the car doors variable is set to the first 4 bits of P2IN so the Car_Doors variable (1ST 4) are set.  First 4 bits of P1Out are 0 because the first 4 bits of the car doors are set and P1 outputs the inverse of the car doors.  The car lock variable has not been toggled because the 5th bit of P2IN is 0.  The 5th bit of P1OUT is set because it is the inverse of the car door variable 
+All car doors have been closed but the car is not yet locked.  When looking at P2IN, the first 4 bits are set.  Because all 4 car door buttons have been pressed.  Now the car doors variable is set to the first 4 bits of P2IN so the Car_Doors variable (1ST 4) are set.  First 4 bits of P1Out are 0 because the first 4 bits of the car doors are set and P1 outputs the inverse of the car doors.  The car lock variable has not been toggled because the 5th bit of P2IN is 0.  The 5th bit of P1OUT is set because it is the inverse of the car door variable 
 
 Screenshot 3:
 
-3. Now all the doors are closed and the car is locked.  So we can see when we look at P2IN all the bits are set, because all of the buttons have been pressed.  So now Car_Doors now equal to the first 4 bits of P2IN.  Car_Lock is toggled to 1 b/c the 5th bit of P2IN was set and is_pressed was equal to 0.  Now, is_pressed is equal to one b/c after toggling Car_Lock is_pressed is set to 1 to ensure that Car_Lock did not toggle.  So now the first 5 bits of P1OUT are 0 because the first 4 bits of P1OUT are set to the inverse of car doors, and the 5th bit of P1OUT is set equal to the inverse of Car_Lock.
+Now all the doors are closed and the car is locked.  So we can see when we look at P2IN all the bits are set, because all of the buttons have been pressed.  So now Car_Doors now equal to the first 4 bits of P2IN.  Car_Lock is toggled to 1 b/c the 5th bit of P2IN was set and is_pressed was equal to 0.  Now, is_pressed is equal to one b/c after toggling Car_Lock is_pressed is set to 1 to ensure that Car_Lock did not toggle.  So now the first 5 bits of P1OUT are 0 because the first 4 bits of P1OUT are set to the inverse of car doors, and the 5th bit of P1OUT is set equal to the inverse of Car_Lock.
   
 ###Discussion: 
 
