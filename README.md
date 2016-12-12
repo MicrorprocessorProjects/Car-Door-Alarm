@@ -1,21 +1,21 @@
-Car-Door-Alarm
+###Car-Door-Alarm
 
 Project of David Burke and Matthew Drill
 Topic 14.1 from "Programmable Microcontrollers With Applications" by Unsalan and Gurhan
 
-Abstract: 
+###Abstract: 
 
 For this project we employed the MSP430 for the assembly of a car door alarm.  To this end we used code composer studio to write and execute the software (in C).  The microcontroller was strapped to a breadboard which then was wired to simulate the car doors and lock, as per the directions in the textbook.  ( This doesn’t take too long to get through, slow down).
 
-Background: 
+###Background: 
 
 Manufactured by Texas Instruments, the MSP 430 is a mixed- signal microcontroller built around a 16-bit CPU which can be used for low powered embedded devices. 25 MHz is the fastest CPU speed.  The MSP430 may throttle for even lower power consumption. Its on-chip memory is up to 512 KB flash and 66 KB ram which is best suited for smaller applications.  Combined with its USB support, this allows us to affix the MSP430 to a breadboard and build our circuit, as well as execute our C program.
 
-Methods: 
+###Methods: 
 
 For this project, we wired the board to active high. We employed 5 LED’s and push buttons; four representing the car doors, one representing the car lock.  220 OHM resistors were used for the leads, buttons, and LEDs’, as opposed to the internal resistors of the MSP430 shown in the schematic.  CCS was used to compile code and execute.   
 
-ALGORITHM:
+###ALGORITHM:
 
 If the car doors are all closed 
 If the alarm is pressed
@@ -34,7 +34,7 @@ Schematic:
 
 We connected push buttons 2.0-2.4 as opposed to schematic which used 2.3-2.5 and XIN & XOUT.  We also wired the circuit to active high rather than active low.  
 
-Results: 
+###Results: 
 
 Screenshot 1:
 
@@ -50,13 +50,14 @@ Screenshot 3:
 3. Now all the doors are close
 d and the car is locked.  So we can see when we look at P2IN all the bits are set, because all of the buttons have been pressed.  So now Car_Doors now equal to the first 4 bits of P2IN.  Car_Lock is toggled to 1 b/c the 5th bit of P2IN was set and is_pressed was equal to 0.  Now, is_pressed is equal to one b/c after toggling Car_Lock is_pressed is set to 1 to ensure that Car_Lock did not toggle.  So now the first 5 bits of P1OUT are 0 because the first 4 bits of P1OUT are set to the inverse of car doors, and the 5th bit of P1OUT is set equal to the inverse of Car_Lock.
   
-Discussion: 
+###Discussion: 
 
 At a glance, attempting to work from the schematic exactly as it was presented proved to be challenging.  We ended up using this schematic as a template for our finished product.  A few minor adjustments that we made include wiring the circuit to active high, using external resistors as opposed to those within the MSP430.
 
 
-Conclusion:
+###Conclusion:
+
 The MSP430 was used in order to produce circuitry for a car door alarm.  We used CCS to compile and execute the code for the microcontroller.  The breadboard was wired to simulate the car doors and lock with LED’s for demonstration. The project has full functionality in its completed form.  The project was completed with little complications.  
 
-References:
+###References:
 Ünsalan, C., & Gürhan, H. D. (2014). Programmable microcontrollers with applications: MSP430 LaunchPad with CCS and Grace. New York: McGraw-Hill Education.
