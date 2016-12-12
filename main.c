@@ -22,24 +22,24 @@ int main(void)
     	Car_Doors=P2IN & BIT_MASK_DOORS;
 
        	// doors can only lock if all doors are closed
-		if(Car_Doors == BIT_MASK_DOORS){
-			if((P2IN & BIT4) == BIT4){
-				if(!is_pressed){
-					Car_Lock ^= BIT0;
-					is_pressed = 1;
-				}
-			}else{
-				is_pressed = 0;
+	if(Car_Doors == BIT_MASK_DOORS){
+		if((P2IN & BIT4) == BIT4){
+			if(!is_pressed){
+				Car_Lock ^= BIT0;
+				is_pressed = 1;
 			}
-		}
-
-		// if	car is locked doors all doors are closed and lock alarm is off
-		if(Car_Lock){
-			P1OUT = ~(BIT_MASK_DOORS | BIT_MASK_LOCK);
 		}else{
-		//else car P1OUT depends on the input from push buttons and lock alarm is on
-			P1OUT = ~Car_Doors | BIT_MASK_LOCK;
+			is_pressed = 0;
 		}
+	}
+
+	// if	car is locked doors all doors are closed and lock alarm is off
+	if(Car_Lock){
+		P1OUT = ~(BIT_MASK_DOORS | BIT_MASK_LOCK);
+	}else{
+	//else car P1OUT depends on the input from push buttons and lock alarm is on
+		P1OUT = ~Car_Doors | BIT_MASK_LOCK;
+	}
     }
 }
 
